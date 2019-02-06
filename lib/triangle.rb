@@ -12,7 +12,7 @@ class Triangle
     if @side1 + @side2 < @side3 || @side1 + @side3 < @side2 || @side2 + @side3 < @side1
       begin
         raise TriangleError
-      
+      rescue TriangleError =>
     elsif @side1 == @side2 && @side1 == @side3
       return :equilateral
     elsif @side1 == @side2 || @side1 == @side3 || @side2 == @side3
@@ -21,6 +21,8 @@ class Triangle
   end
   
   class TriangleError < StandardError
-    "Not a valid triangle"
+    def error
+      "Not a valid triangle"
+    end
   end
 end
