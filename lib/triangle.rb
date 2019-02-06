@@ -21,7 +21,6 @@ class Triangle
       begin
         raise TriangleError
       rescue TriangleError => error
-      binding.pry
         puts error
       end
     elsif @side1 == @side2 && @side1 == @side3
